@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import folium
 from .models import location as LocationModel
+from django.views import View
 
 def home(request):
 
@@ -14,3 +15,11 @@ def home(request):
 
     context ={'map': initialMap._repr_html_(), 'locations':locations}
     return render(request, 'map/home.html', context)
+
+def puntos(request):
+    
+    loca = LocationModel.objects.all()
+    
+    
+    return render(request,'map/puntos.html')
+
