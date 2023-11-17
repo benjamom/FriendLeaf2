@@ -1,0 +1,47 @@
+{% extends 'map/base.html' %}
+{% block content %}
+
+<head>
+    <title>Iniciar Sesion</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <form action="m">
+            <div class="form-group">
+                <label>Ingrese su rut:</label>
+                <input onblur="validarFormulario()" type="text" class="form-control" placeholder="ej: 12.345.678-9"
+                    id="txtRut" required>
+                <small id="valRut">Ingrese un rut valido.</small>
+                <br>
+                <label>Ingrese su nombre:</label>
+                <input onblur="validarFormulario()" type="text" class="form-control" placeholder="pepe perez gonzalez"
+                    id="txtNombre" required>
+                <small id="valNombre">Ingrese un nombre valido.</small>
+                <br>
+                <label>Ingrese su correo:</label>
+                <input onblur="validarFormulario()" type="email" class="form-control" placeholder="pepeperez@correo.com"
+                    id="txtCorreo" required>
+                <small id="valCorreo">Ingrese un correo valido.</small>
+                <br>
+                <label>Ingrese su numero de telefono:</label>
+                <input onblur="validarFormulario()" type="number" class="form-control" placeholder="9 1234 5678"
+                    id="txtNumero" required>
+                <small id="valNumero">Ingrese un numero de telefono valido.</small>
+                <div>
+                    <br>
+                    <div class="botones d-flex justify-content-evenly mt-3">
+                        <button type="submit" class="btn btn-dark">enviar</button>
+                        <br>
+                        <button type="reset" class="btn btn-danger"> borrar</button>
+                        <br>
+                        <a href="{% url 'home' %}">
+                            <button type="button" class="btn btn-dark">volver</button>
+                        </a>
+                    </div>
+        </form>
+    </div>
+</body>
+
+
+{% endblock %}

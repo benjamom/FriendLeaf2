@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 class location(models.Model):
     name = models.CharField(max_length=250, verbose_name = 'Punto Verde')
@@ -14,3 +15,4 @@ class location(models.Model):
 
     def __str__(self):
         return self.name    
+

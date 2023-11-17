@@ -1,0 +1,28 @@
+{% extends 'map/base.html' %}
+{% block content %}
+<div class="container justify-content-center mt-5 mb-40" >
+    <form action="m">
+        <div class="form-group">
+            <label>Ingrese su usuario:</label>
+            <input onblur="validarFormulario()" type="text" class="form-control" placeholder=""
+                id="txtUsuario" required>
+            <br>
+            <label>Ingrese su contraseña:</label>
+            <input onblur="validarFormulario()" type="password" class="form-control" placeholder=""
+                id="txtPassword" required>
+                <br>
+                <div class="botones d-flex justify-content-evenly mt-3">
+                    <a href="{% url 'home' %}">
+                        <button type="submit" class="btn btn-dark">enviar</button>
+                    </a>
+                    <br>
+                    <button type="reset" class="btn btn-danger"> borrar</button>
+                    <br>
+                    <a href="{% url 'home' %}">
+                        <button type="button" class="btn btn-dark">volver</button>
+                    </a>
+                </div>
+    </form>
+</div>
+
+{% endblock %}

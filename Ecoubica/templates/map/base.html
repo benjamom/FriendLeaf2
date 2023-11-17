@@ -15,9 +15,10 @@
 
 <body>
     <div class="container">
-        <nav class="navbar bg-body-tertiary fixed-top" style="background-color: darkcyan;">
+        <nav class="navbar bg-body-tertiary " style="background-color: darkcyan;">
             <div class="container-fluid">
-                <h3>FriendLeaf</h3>
+                <img src="{% static 'img/logoPagina.png' %}" alt="" id="logo1">
+                <img src="{% static 'img/logo.png' %}" alt="" id="logo2">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="bi bi-text-indent-right"></span>
@@ -34,10 +35,10 @@
                                 <a class="dropdown-item" href="{% url 'home' %}">Inicio</a>
                             </li>
                             <li >
-                                <a class="dropdown-item" href="#">Registrarme</a>
+                                <a class="dropdown-item" href="{% url 'registro' %}">Registrarme</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Iniciar Sesion</a>
+                                <a class="dropdown-item" href="{% url 'login' %}">Iniciar Sesion</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{% url 'puntos' %}">Puntos registrados</a>
