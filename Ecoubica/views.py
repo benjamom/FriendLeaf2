@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 import folium
+
+from Ecoubica.forms import PuntoForm
 from .models import location as LocationModel
 
 
@@ -28,3 +30,15 @@ def registro(request):
 
 def login(request):
     return render(request, 'registration/login.html')
+
+def agregar_punto(request):
+    if request.method == 'POST':
+        form = PuntoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Puedes agregar aquí la lógica para actualizar el mapa con el nuevo punto
+            return redirect('home')
+    else:
+        form = PuntoForm()
+
+    return render(request, 'map/agregar_punto.html', {'form': form})

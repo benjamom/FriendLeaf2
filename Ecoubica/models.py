@@ -13,6 +13,7 @@ class location(models.Model):
         verbose_name_plural='Puntos Verdes'
         ordering = ['name']
 
+
     def __str__(self):
         return self.name    
 
